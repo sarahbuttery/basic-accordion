@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Accordion</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+        body {
+            font-size: 16px;
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #333;
+        }
+
+        .main-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            float: none;
+        }
+
+        .padding-all {
+            padding: 60px;
+        }
+
+        .col-bg {}
+
+        .col-parent {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            background: #f4f4f4;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .col-header {
+            padding: 20px 0px;
+        }
+
+        .col-content {
+            padding: 0px;
+            transition: height 1s ease-out;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .show {
+            height: 100px;
+        }
+
+        .col-content {
+            background: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .fa-angle-down {
+            margin: 0 0 0 5px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        
+    </style>
+
+    <div class="main-wrapper padding-all">
+        <h1>Accordion</h1>
+
+        <div class="accordion">
+            <div class="col-bg">
+                <div class="col-parent">
+                    <div class="col-header">
+                        <h2>Title 1</h2>
+                    </div>
+                    <span class="fa fa-angle-down tab"></span>
+                    <div class="col-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis harum at voluptate nulla magni deleniti nihil facere quis dicta, ut odio rerum expedita provident obcaecati molestias quam eaque, soluta! Earum.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-bg">
+                <div class="col-parent">
+                    <div class="col-header">
+                        <h2>Title 2</h2>
+                    </div>
+                    <span class="fa fa-angle-down tab"></span>
+                    <div class="col-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus itaque in, natus. Illum totam repudiandae quos officiis libero suscipit, aspernatur id consectetur vero quo ad ut aut, necessitatibus! Ipsam, dolorem.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-bg">
+                <div class="col-parent">
+                    <div class="col-header">
+                        <h2>Title 3</h2>
+                    </div>
+                    <span class="fa fa-angle-down tab"></span>
+                    <div class="col-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum doloremque aliquid vitae. Quidem, cupiditate deserunt. Alias voluptas blanditiis reiciendis vel amet neque sunt porro cum pariatur ullam! Nemo, exercitationem aperiam.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const btn = document.getElementsByClassName("tab");
+
+        var i;
+
+        for (var i = 0; i < btn.length; i++) {
+
+            btn[i].addEventListener("click", function() {
+
+
+                var panel = this.nextElementSibling;
+
+                panel.classList.toggle("show");
+
+            });
+        }
+    </script>
+</body>
+
+</html>
